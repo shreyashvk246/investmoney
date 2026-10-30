@@ -37,8 +37,12 @@ export const App: React.FC = () => {
     const root = document.documentElement;
     if (isDark) {
       root.classList.add('dark');
+      document.body.classList.add('dark');
+      root.style.colorScheme = 'dark';
     } else {
       root.classList.remove('dark');
+      document.body.classList.remove('dark');
+      root.style.colorScheme = 'light';
     }
     try {
       localStorage.setItem('theme_dark', String(isDark));
